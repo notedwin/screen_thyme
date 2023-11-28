@@ -1,0 +1,6 @@
+__pycache__/
+.env
+dist/
+io.screen.thyme.plist
+examples/runner.py
+.DS_Store
