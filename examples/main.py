@@ -2,7 +2,7 @@ import os
 
 from dotenv import find_dotenv, load_dotenv
 
-from screen_thyme.loader import LaunchdManager
+from screen_thyme import LaunchdManager
 
 # provide secrets in .env file or hardcode
 load_dotenv(find_dotenv())
