@@ -122,13 +122,13 @@ class LaunchdManager(BaseModel):
     path: str
 
     def load_job(self):
-        plist_file = os.path.join(self.path, "io.screen.thyme.plist")
-        command = f"launchctl load -w {plist_file}"
+        command = f"cp {os.path.join(self.path, 'io.screen.thyme.plist')} ~/Library/LaunchAgents/io.screen.thyme.plist"
+        subprocess.run(command, shell=True)
+        command = "launchctl load -w ~/Library/LaunchAgents/io.screen.thyme.plist"
         subprocess.run(command, shell=True)
 
     def unload_job(self):
-        plist_file = os.path.join(self.path, "io.screen.thyme.plist")
-        command = f"launchctl unload -w {plist_file}"
+        command = "launchctl unload -w ~/Library/LaunchAgents/io.screen.thyme.plist"
         subprocess.run(command, shell=True)
 
     def create_plist(self):
